@@ -1,0 +1,62 @@
+@use 'src/scss/base/variables' as v;
+@use 'src/scss/base/mixins' as m;
+
+.header {
+    background-color: v.$negro;
+    padding: 15rem 0;
+
+    .header-imagen {
+        margin: auto 0;
+    }
+
+    .header-contenido {
+        @include m.tablet { 
+            @include m.grid(2, 5rem)
+        }
+    }
+
+    .header-texto {
+        color: v.$blanco;
+        text-align: center;
+        padding-top: 5rem;
+
+        @include m.tablet { 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            text-align: left;
+            padding-top: 0; 
+        }
+
+        .producto-slogan {
+            font-weight: 900;
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .producto-nombre {
+            font-size: 6rem;
+            margin: 0;
+            line-height: 1;
+
+            @include m.tablet { 
+                font-size: 10rem;
+            }
+        }
+
+        .producto-descripcion {
+            margin-bottom: 0;
+        }
+
+        .producto-precio {
+            margin: 0;
+            span {
+                font-size: 6rem;
+                font-weight: 900;
+            }
+        }
+
+
+    }
+}
